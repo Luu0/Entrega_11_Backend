@@ -33,28 +33,15 @@ localhost:8080/chat
 Esta es la ruta para ver el chat que solo puede usarlo un usario
 
 
-localhost:8080/mockingproducts
+localhost:8080/test/mockingproducts
 Trae 100 productos que estan sacados de la api de fakerjs
 
-Actualmente tengo un problema en el enrutado router.get("/:cid/purchase");
-que una vez logueado me tira lo siguente:
+localhost:8080/test/logger
+Es una prueba del funcionamento de logger dependiendo que se usa npm run dev o npm run prod tirara diferentes errores
 
-Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
-535 5.7.8 https://support.google.com/mail/?p=BadCredentials v19-20020a17090a899300b0029951d04dc4sm5115725pjn.54 - gsmtp
-at SMTPConnection._formatError (C:\Users\valen\OneDrive\Escritorio\copia-entrega-8\node_modules\nodemailer\lib\smtp-connection\index.js:790:19)
-at SMTPConnection._actionAUTHComplete (C:\Users\valen\OneDrive\Escritorio\copia-entrega-8\node_modules\nodemailer\lib\smtp-connection\index.js:1564:34)
-at SMTPConnection. (C:\Users\valen\OneDrive\Escritorio\copia-entrega-8\node_modules\nodemailer\lib\smtp-connection\index.js:546:26)
-at SMTPConnection._processResponse (C:\Users\valen\OneDrive\Escritorio\copia-entrega-8\node_modules\nodemailer\lib\smtp-connection\index.js:969:20)
-at SMTPConnection._onData (C:\Users\valen\OneDrive\Escritorio\copia-entrega-8\node_modules\nodemailer\lib\smtp-connection\index.js:755:14)
-at SMTPConnection._onSocketData (C:\Users\valen\OneDrive\Escritorio\copia-entrega-8\node_modules\nodemailer\lib\smtp-connection\index.js:193:44)
-at TLSSocket.emit (node:events:513:28)
-at addChunk (node:internal/streams/readable:324:12)
-at readableAddChunk (node:internal/streams/readable:297:9)
-at Readable.push (node:internal/streams/readable:234:10) {
-code: ‘EAUTH’,
-response: ‘535-5.7.8 Username and Password not accepted. For more information, go to\n’ +
-‘535 5.7.8 https://support.google.com/mail/?p=BadCredentials v19-20020a17090a899300b0029951d04dc4sm5115725pjn.54 - gsmtp’,
-responseCode: 535,
-command: ‘AUTH PLAIN’
-}
+localhost:8080/:cid/purchase
+Esta es la ruta para cuando el se quiera realizar una compra al carrito (requiere loguearse de atemano al mismo tiempo de un carrito
+con productos adentro)
+
+
 

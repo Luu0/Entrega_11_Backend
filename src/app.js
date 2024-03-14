@@ -16,7 +16,9 @@ import MongoStore from "connect-mongo";
 import initializePassport from "./Config/passport.config.js";
 import githubloginrouter from "./routes/github-login.views.router.js"
 import config from "./Config/config.js";
-import mockRouter from "./routes/mockRoute.js";
+import TestRouter from "./routes/TestRoute.js";
+// import {addLogger} from "./utils/logger.js"
+
 
 const app = express();
 const SERVER_PORT = config.port;
@@ -53,6 +55,8 @@ app.engine("hbs",handlebars.engine({
   }
 }));
 
+// app.use(addLogger);
+
 app.set("view engine", "hbs");
 app.set("views", `${__dirname}/views`); 
 app.use(express.static(`${__dirname}/public`));
@@ -80,7 +84,7 @@ app.use("/api/carts",cartRouter);
 app.use("/users",userviews);
 app.use("/api/sessions",sessionrouter);
 app.use("/github", githubloginrouter);
-app.use("/mockingproducts",mockRouter);
+app.use("/test",TestRouter);
 
 io.on('connection', (socket) => {
   console.log('Nuevo cliente conectado');
